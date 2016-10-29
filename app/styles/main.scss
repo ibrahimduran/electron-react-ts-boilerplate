@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+div.introduction {
+  text-align: center;
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: rgb(84, 84, 84);
+    font-family: 'Arial';
+    max-width: 400px;
+    margin: 30px auto;
+  }
+
+  p {
+    line-height: 25px;
+  }
+
+  img {
+    margin: 15px auto;
+  }
+}

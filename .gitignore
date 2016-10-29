@@ -1,0 +1,21 @@
+### Project Related ###
+dist/
+node_modules/
+.npm/
+.sass-cache/
+temp/
+tmp/
+*.tmp
+*.tmp.*
+logs/
+*.log
+npm-debug.log*
+
+### OS Related ###
+.DS_Store
+Thumbs.db
+$RECYCLE.BIN/
+
+### Editor Related ###
+.idea/
+.vscode/

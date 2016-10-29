@@ -1,0 +1,10 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    link(rel='stylesheet', href='app/styles/main.css')
+  body
+    div#react-app
+    script(type='text/javascript').
+      require('./app/app.js');
+      require('devtron').install();
