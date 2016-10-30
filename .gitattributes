@@ -1,1 +1,2 @@
-devtools/* linguist-vendored
+devtools/** linguist-vendored
+devtools/react/* linguist-vendored
