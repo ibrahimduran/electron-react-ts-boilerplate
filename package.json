@@ -1,6 +1,6 @@
 {
   "name": "electron-react-ts-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "ibrahimduran/electron-react-ts-boilerplate",
   "description": "Boilerplate for developing Electron apps using TypeScript2.0 and ReactJS.",
   "keywords": [
