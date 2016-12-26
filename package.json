@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "repository": "ibrahimduran/electron-react-ts-boilerplate",
   "description": "Boilerplate for developing Electron apps using TypeScript2.0 and ReactJS.",
-  "keywords": ["electron", "typescript", "ts", "react", "reactjs"],
+  "keywords": [
+    "electron",
+    "typescript",
+    "ts",
+    "react",
+    "reactjs"
+  ],
   "bugs": {
     "url": "https://github.com/ibrahimduran/electron-react-ts-boilerplate/issues"
   },
@@ -26,9 +32,12 @@
     "gulp": "^3.9.1",
     "gulp-pug": "^3.1.0",
     "gulp-sass": "^2.3.2",
-    "gulp-typescript": "^3.0.2"
+    "gulp-typescript": "^3.0.2",
+    "gulp-uglify": "^2.0.0"
   },
   "dependencies": {
+    "@types/core-js": "^0.9.35",
+    "@types/electron": "^1.4.30",
     "electron": "^1.4.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",

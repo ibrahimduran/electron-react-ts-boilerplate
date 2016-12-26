@@ -3,7 +3,7 @@ Boilerplate for developing Electron apps using TypeScript2.0 and ReactJS.
 
 ## Usage
 
-1. Clone this repository and cd:
+1. Clone this repository:
 
 	```bash
 	$ git clone https://github.com/ibrahimduran/electron-react-ts-boilerplate.git
@@ -42,7 +42,7 @@ Boilerplate for developing Electron apps using TypeScript2.0 and ReactJS.
 ```
 ├── app/
 │   ├── components/
-│   ├── images/
+│   ├── resources/
 │   ├── styles/
 │   └── app.tsx
 ├── devtools/
@@ -66,7 +66,7 @@ Output directory for build process.
 
 #### [devtools/](https://github.com/ibrahimduran/electron-react-ts-boilerplate/tree/master/devtools)
 
-Contains 3th party extensions for development. 
+Contains 3th party extensions for development.
 
 #### [tsconfig.json](https://github.com/ibrahimduran/electron-react-ts-boilerplate/blob/master/tsconfig.json)
 

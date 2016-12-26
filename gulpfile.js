@@ -1,43 +1,59 @@
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
-const project = ts.createProject('tsconfig.json');
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
+const uglify = require('gulp-uglify');
 
-gulp.task('html', () => {
+const project = ts.createProject('tsconfig.json');
+
+/* ============== HTML =============
+==================================== */
+gulp.task('build:html', () => {
   return gulp.src('index.pug')
     .pipe(pug())
     .pipe(gulp.dest('dist'));
 });
-gulp.task('html:watch', ['html'], () => {
-  gulp.watch(['index.pug'], ['html']);
+gulp.task('watch:html', () => {
+  gulp.watch(['index.pug'], ['build:html']);
 });
 
-gulp.task('js', () => {
+/* ============ SCRIPTS ============
+==================================== */
+gulp.task('build:js', () => {
   return project.src()
     .pipe(project())
-    .js.pipe(gulp.dest('dist'));
+    .js
+      .pipe(uglify())
+      .pipe(gulp.dest('dist'));
 });
-gulp.task('js:watch', ['js'], () => {
-  gulp.watch(['main.ts', 'app/**/*.ts', 'app/**/*.tsx'], ['js']);
+gulp.task('watch:js', () => {
+  gulp.watch(['main.ts', 'app/**/*.ts', 'app/**/*.tsx'], ['build:js']);
 });
 
-gulp.task('css', () => {
-  return gulp.src('app/**/*.scss')
+/* ============= STYLES ============
+==================================== */
+gulp.task('build:css', () => {
+  return gulp.src('app/styles/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('dist/app'));
+    .pipe(gulp.dest('dist/styles'));
 })
-gulp.task('css:watch', ['css'], () => {
-  gulp.watch('app/**/*.scss', ['css']);
+gulp.task('watch:css', () => {
+  gulp.watch('app/**/*.scss', ['build:css']);
 });
 
-gulp.task('images', () => {
-  return gulp.src('app/images/**/*.*')
-    .pipe(gulp.dest('dist/app/images'));
+/* =========== RESOURCES ===========
+==================================== */
+gulp.task('build:resources', () => {
+  return gulp.src('app/resources/**/*.*')
+    .pipe(gulp.dest('dist/resources'));
 });
-gulp.task('images:watch', ['images'], () => {
-  gulp.watch('app/images/**/*.*', ['css']);
+gulp.task('watch:resources', () => {
+  gulp.watch('app/resources/**/*.*', ['build:resources']);
 });
 
-gulp.task('default', ['html', 'js', 'css', 'images']);
-gulp.task('watch', ['html:watch', 'js:watch', 'css:watch', 'images:watch']);
+/* =========== DEFAULTS ===========
+==================================== */
+gulp.task('build', ['build:html', 'build:js', 'build:css', 'build:resources']);
+gulp.task('watch', ['watch:html', 'watch:js', 'watch:css', 'watch:images']);
+
+gulp.task('default', ['build']);

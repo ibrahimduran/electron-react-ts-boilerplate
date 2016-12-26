@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron');
+import { app, BrowserWindow } from 'electron';
 
 let win;
 
@@ -15,7 +15,7 @@ function createWindow() {
   win.loadURL(`file://${__dirname}/index.html`);
 
   /**
-   * React Developer Tools Extension
+    * Developer Tools Extensions
    */
   BrowserWindow.addDevToolsExtension(`${__dirname}/../devtools/react`);
 

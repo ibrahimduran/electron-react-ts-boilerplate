@@ -12,5 +12,10 @@
 		"./main.ts",
 		"./app/**/*.ts",
 		"./app/**/*.tsx"
-	]
+	],
+  "filesGlob" : [
+    "**/*.ts",
+    "**/*.tsx",
+    "!node_modules/**"
+  ]
 }
